@@ -6,7 +6,7 @@ RUN apk --no-cache update && apk --no-cache add jpegoptim optipng pngquant gifsi
 
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN install-php-extensions zip exif pcntl gd intl redis opcache bcmath pdo_pgsql pgsql imagick @composer
+RUN install-php-extensions pdo_mysql zip exif pcntl gd intl redis opcache bcmath pdo_pgsql pgsql imagick @composer
 
 ADD ./configs/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 ADD ./configs/init.sh /init.sh
